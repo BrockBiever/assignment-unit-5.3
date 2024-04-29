@@ -3,22 +3,25 @@ console.log('***** Music Collection *****')
 let myCollection = [] ;
 
 
-function addToCollection(collection, title, artist, yearPublished){
-  collection.push(title) ,
-  collection.push(artist),
-  collection.push(yearPublished)
+function addToCollection(collection,album, titleOf, artists, year){
+ album = {
+  title:titleOf,
+    artist:artists,
+    yearPublished:year
+  };
+  collection.push(album) 
  
   ;
 console.log(collection) ;
-  return collection
+  return album
 };
 
-addToCollection(myCollection,'A Love Letter to You', 'TrippyRedd', 2017) ;
-addToCollection(myCollection, 'Guilty Gear Strive ST','Arc System Works', 2022);
-addToCollection(myCollection, 'Mellon Collie And The Infinite Sadness', 'The Smashing Pumpkins', 1994);
-addToCollection(myCollection, 'Love Is Rage 2', 'Lil Uzi Vert',2020 );
-addToCollection(myCollection, 'Screaming for Vengance', 'Judas Priest', 1981);
-addToCollection(myCollection, 'Hybrid Theory', 'Linkin Park', 2000);
+addToCollection(myCollection,'ALL2U','A Love Letter to You', 'TrippyRedd', 2017) ;
+addToCollection(myCollection,'GGSST', 'Guilty Gear Strive ST','Arc System Works', 2022);
+addToCollection(myCollection,'MCATIS', 'Mellon Collie And The Infinite Sadness', 'The Smashing Pumpkins', 1994);
+addToCollection(myCollection,'LIR2', 'Love Is Rage 2', 'Lil Uzi Vert',2020 );
+addToCollection(myCollection,'SFV', 'Screaming for Vengance', 'Judas Priest', 1981);
+addToCollection(myCollection,'HT', 'Hybrid Theory', 'Linkin Park', 2000);
 
 function showMyCollection(collection){
 for (let i = 0; i <= collection.length; i++)
@@ -28,12 +31,15 @@ return collection ;
 
 showMyCollection(myCollection) ;
 
-function findByArtist(collection, artist){
+function findByArtist(collection,album, artist, artistians1){
 for( let i = 0; i <= collection.length; i++ )
-
-return artist
-} ;
-artists = [] ;
+artist = album.artist
+artistians1.push(album.artists);
+console.log(artistians1)
+return artistians1
+} ; 
+findByArtist(myCollection, 'ALL2U', 'TrippyRedd', artistians)
+let artistians = []; 
 
 
 
@@ -51,3 +57,4 @@ try {
 } catch (e) {
   // Do nothing
 }
+
